@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+:root {
+  --primary: #12bca2;
+  --secondary: #6d15df;
+}
+h1,h2,h3 {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  color: #333;
+  font-family: 'Poppins';
+  background: #f2f2f2;
+}
+nav {
+  background: var(--primary);
+  padding: 10px 20px;
+  text-align: center;
+}
+nav a {
+  color: #f2f2f2;
+  margin: 10px;
+  display: inline-block;
+}
+nav h1 {
+  color: #fff;
+}
+.page {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* --------------------- */
+
+/* page layout */
+.page.home {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* error poruka */
+.page.home p {
+  color: var(--secondary);
+  text-align: center;
+}
+
+/* wrapper */
+.smoothies {
+  margin-top: 20px;
+}
+
+/* grid za kartice */
+.smoothie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* osnovni stil za kartice (ako već nemaš u SmoothieCard) */
+.smoothie-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.smoothie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* naslov */
+.smoothie-card h3 {
+  margin-bottom: 10px;
+}
+
+/* mali tekst */
+.smoothie-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #6d15df, #5b11c5);
+  color: #fff;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  box-shadow: 0 3px 8px rgba(109, 21, 223, 0.25);
+}
+
+/* zvezdica */
+.rating span {
+  font-size: 15px;
+}
+
+/* opcionalno: malo interakcije */
+.rating:hover {
+  transform: scale(1.06);
+  transition: 0.15s ease;
+}
+
+.smoothie-card:hover .rating {
+  filter: brightness(1.1);
+}
+
+/*------- CREATE PAGE -------*/
+
+/* wrapper za create i update */
+.page.create,
+.page.update {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* reusable forma */
+form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+/* label */
+form label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* input i textarea */
+form input,
+form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: 'Poppins';
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+/* fokus */
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(18, 188, 162, 0.2);
+}
+
+/* textarea */
+form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* dugme */
+form button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* hover */
+form button:hover {
+  background: #0ea58d;
+  transform: translateY(-1px);
+}
+
+/* error */
+form .error {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(109, 21, 223, 0.1);
+  color: var(--secondary);
+  text-align: center;
+}
+
+/* opcionalno ako hoces veci font dugmeta */
+.buttonCreateRecipe {
+  font-size: 16px;
+}
+/*------- BUTTONS AND ICONS -------*/
+
+/* da kartica bude referenca za absolute */
+.smoothie-card {
+  position: relative;
+}
+
+/* container za dugme */
+.smoothie-card .buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* link kao dugme */
+.smoothie-card .buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background: #fff;
+  border-radius: 50%;
+  text-decoration: none;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: 0.2s ease;
+}
+
+/* ikonica */
+.smoothie-card .buttons i {
+  color: var(--secondary);
+  font-size: 20px;
+}
+
+/* hover efekat */
+.smoothie-card .buttons a:hover {
+  background: var(--secondary);
+  transform: scale(1.1);
+}
+
+/* hover - promena boje ikonice */
+.smoothie-card .buttons a:hover i {
+  color: #fff;
+}
+
+/*------- DELETE AND EDIT -------*/
+
+/* delete dugme (isti stil kao edit dugme) */
+.smoothie-card .buttons i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background: #fff;
+  border-radius: 50%;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+
+  color: #777;
+  font-size: 20px;
+
+  transition: 0.2s ease;
+}
+
+/* hover efekat za delete */
+.smoothie-card .buttons i:hover {
+  background: #ef4444;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.smoothie-card .buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-icon {
+  color: var(--secondary);
+}
+
+
+.edit-icon:hover {
+  background: var(--secondary) !important;
+  color: #fff;
+}
+
+/*------- ORDER BY -------*/
+
+/* container */
+.order-by {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  margin-bottom: 20px;
+  padding: 10px 15px;
+
+  background: #fff;
+  border-radius: 10px;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* tekst */
+.order-by p {
+  margin: 0;
+  font-weight: 500;
+  color: #555;
+}
+
+/* dugmici */
+.order-by button {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+
+  background: #f9f9f9;
+  color: #333;
+
+  cursor: pointer;
+  font-size: 13px;
+
+  transition: 0.2s ease;
+}
+
+/* hover */
+.order-by button:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* aktivni (ovo ces kasnije koristiti) */
+.order-by button.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* prikaz trenutno izabranog */
+.order-by span {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--secondary);
+  font-weight: 500;
+}
