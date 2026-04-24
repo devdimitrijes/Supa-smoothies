@@ -1,9 +1,32 @@
-# Starter React Project for the Supabase Course
+# 🍹 Supa Smoothies
 
-**How to run the starter project:**
+Supa Smoothies is a simple CRUD web application built with **React** and **JavaScript**, using **Supabase** as a backend service for database management.
 
-1. Once downloaded, navigate to the project directory in a terminal and run **npm install** to install all the project dependencies.
-2. In the project directory, run **npm start** to run the app & view it in a browser at [http://localhost:3000](http://localhost:3000).
+The project allows users to create, view, update, and delete smoothie recipes, demonstrating basic database operations and frontend-backend integration.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Tech Stack
+- React
+- JavaScript
+- Supabase
+- HTML & CSS
+
+## 📌 Features
+- Create new smoothie recipes
+- Read and display recipes from database
+- Update existing recipes
+- Delete recipes
+- Real-time database integration with Supabase
+
+## 🗄️ Database
+This project uses Supabase with enabled Row Level Security (RLS) and basic CRUD policies for data access control.
+
+## 🎯 Purpose
+Built as a learning project to practice React fundamentals, state management, and working with external databases (Supabase).
+
+## 📁 Setup
+1. Clone the repository
+2. Run `npm install`
+3. Create a `.env` file with your Supabase credentials
+4. Run `npm start`
+
+---
